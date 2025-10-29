@@ -1,4 +1,3 @@
-<app-student-list-item [item] = "userList[0]"></app-student-list-item>
-<app-student-list-item [item] = "userList[1]"></app-student-list-item>
-<app-student-list-item [item] = "userList[2]"></app-student-list-item>
-<app-student-list-item [item] = "userList[3]"></app-student-list-item>
+<div *ngFor="let user of userList">
+  <app-student-list-item [item] = "user"></app-student-list-item>
+</div>
