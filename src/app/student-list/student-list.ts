@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {User} from '../models/user';
-import {NgForOf} from '@angular/common';
+import {NgClass, NgForOf} from '@angular/common';
 import {StudentListItem} from '../student-list-item/studend-list-item';
 
 @Component({
   selector: 'app-student-list',
-  imports: [NgForOf, StudentListItem],
+  imports: [NgForOf, StudentListItem, NgClass],
   templateUrl: './student-list.html',
   styleUrl: './student-list.css'
 })
