@@ -1,23 +1,8 @@
 <html>
     <body>
       <div class="container">
-        <h2>User List</h2>
-        <div *ngFor="let user of userList" class="user-card">
-          <h3>{{ user.firstName }} {{ user.lastName }}</h3>
-          <p>ID: {{ user.id }}</p>
-          <p>Favourite Class: {{ user.favouriteClass }}</p>
-          <p>Is a Student: {{ user.isStudent ? 'Yes' : 'No' }}</p>
-        </div>
-        <div [ngSwitch]="selectedOption">
-          <div *ngSwitchCase="'name'">
-            {{name}}
-          </div>
-          <div *ngSwitchCase="'age'">
-            {{age}}
-          </div>
-        </div>
-        <button (click)="selectedOption = 'name'">Show Creator Name</button>
-        <button (click)="selectedOption = 'age'">Show Creator Age</button>
+        <app-student-list-item></app-student-list-item>
+        <app-student-list></app-student-list>
       </div>
     </body>
 </html>
