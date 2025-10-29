@@ -8,5 +8,5 @@ import {User} from '../models/user';
   styleUrl: './studend-list-item.css'
 })
 export class StudentListItem {
- @Input()? item:User;
+ @Input() item?: User | undefined;
 }
