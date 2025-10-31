@@ -1,3 +1,4 @@
 <div *ngFor="let user of userList; let i = index">
   <app-student-list-item [item] = "user" [ngClass]="{'even':i%2===0, 'odd':i%2===1}"></app-student-list-item>
+
 </div>
