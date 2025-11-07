@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-modify-student',
@@ -11,8 +12,11 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 })
 export class ModifyStudent {
   studentForm: FormGroup | undefined;
+  private router: any;
+  private studentService: any;
 
   onSubmit(): void {
+    // @ts-ignore
     const student: User = this.studentForm.value;
 
     // Check if we're updating an existing student
@@ -29,6 +33,7 @@ export class ModifyStudent {
   }
 
   onDelete(): void {
+    // @ts-ignore
     const id = this.studentForm.get('id')?.value;
     if (id) {
       this.studentService.deleteStudent(id);
