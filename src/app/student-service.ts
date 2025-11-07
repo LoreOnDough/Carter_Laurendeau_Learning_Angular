@@ -36,4 +36,8 @@ export class StudentService {
     const student = this.students.find(user => user.id === studentId);
     return of(student);
   }
+
+  generateNewId(): number {
+    return this.students.length > 0 ? Math.max(...this.students.map(student => student.id)) + 1 : 1;
+  }
 }

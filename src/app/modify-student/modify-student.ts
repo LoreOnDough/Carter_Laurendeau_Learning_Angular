@@ -1,19 +1,66 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {User} from '../models/user';
+import {ActivatedRoute, Router} from '@angular/router';
+import {StudentService} from '../student-service';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-modify-student',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   templateUrl: './modify-student.html',
   styleUrl: './modify-student.css'
 })
-export class ModifyStudent {
-  studentForm: FormGroup | undefined;
-  private router: any;
-  private studentService: any;
+export class ModifyStudent implements OnInit{
+
+  studentForm: FormGroup;
+  //private router: any;
+  //private studentService: any;
+  student: User | undefined;
+  error: string | null = null;
+
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private studentService: StudentService,
+    private router: Router
+  ) {
+    this.studentForm = this.fb.group({
+      //Auto filling the ID field with a new ID
+      id: [studentService.generateNewId()], //ID is NOT required
+      firstName: ['', Validators.required],//First name is required
+      lastName: ['', Validators.required],
+      favouriteClass: [''],
+      isStudent: [false]
+    });
+  }
+
+  ngOnInit(): void {
+    // first we retreive the student ID from the route parameters using the ActivatedRoute service
+    //the paramMap.get('id') method extracts the 'id' parameter from the route, and Number()
+    // converts it to a numeric value. This ID is then used to fetch the student's details.
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      //if the ID is valid, the StudentService is used to fetch the student's details by calling the getStudentById method
+      this.studentService.getStudentById(id).subscribe( {
+        next: student => {
+          if (student) {
+            //If the student object is valid, the patchValue method of the reactive form
+            // (studentForm) is called to populate the form with the student's data The patchValue method updates the form controls with the
+            // values from the student object without resetting the entire form
+            this.studentForm.patchValue(student);
+          }
+        },
+        error: err => {
+          this.error = 'Error fetching student';
+          console.error('Error fetching student:', err);
+        }
+      });
+    }
+  }
 
   onSubmit(): void {
     // @ts-ignore

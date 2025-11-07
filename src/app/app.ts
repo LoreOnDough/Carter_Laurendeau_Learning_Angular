@@ -11,11 +11,7 @@ import {Observable} from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.html',
   imports: [
-    NgForOf,
-    NgSwitch,
-    NgSwitchCase,
-    StudentList,
-    StudentListItem
+    StudentList
   ],
   styleUrl: './app.css'
 })

@@ -6,17 +6,14 @@ import {userList} from '../data/mock-content';
   selector: 'app-student-list-item',
   imports: [],
   templateUrl: './studend-list-item.html',
-  styleUrl: './studend-list-item.css'
+  styleUrl: './studend-list-item.css',
+  standalone:true
 })
 
 
 export class StudentListItem {
-  constructor(item: User | undefined, currentIndex: number | undefined, userList: User[]) {
-    this.item = item;
-    this.currentIndex = currentIndex;
-    this.userList = userList;
-  }
- @Input() item?: User | undefined;
+  private router: any;
+  @Input() item?: User | undefined;
   currentIndex: number | undefined;
 
   //function to go back to student-list view

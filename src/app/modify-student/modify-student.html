@@ -21,13 +21,13 @@
   <!-- Department Field -->
   <div class="form-group">
     <label for="favouriteClass">Favourite Class</label>
-    <input type="text" id="department" formControlName="department" />
+    <input type="text" id="favouriteClass" formControlName="favouriteClass" />
   </div>
 
   <!-- Is Admin Checkbox -->
   <div class="form-group">
     <label for="isStudent">Is Student</label>
-    <input type="checkbox" id="isAdmin" formControlName="isAdmin" />
+    <input type="checkbox" id="isStudent" formControlName="isStudent" />
   </div>
 
   <!-- Submit Button (Add or Update) -->
@@ -39,3 +39,4 @@
   <!-- Back Button -->
   <button type="button" (click)="navigateToStudentList()">Back to List</button>
 </form>
+<div *ngIf="error" class="error">{{ error }}</div>

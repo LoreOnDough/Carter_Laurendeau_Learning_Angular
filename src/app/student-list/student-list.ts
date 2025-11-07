@@ -12,7 +12,7 @@ import {StudentService} from '../student-service';
 })
 export class StudentList implements OnInit{
   identifier:string[] = ['id', 'firstName', 'lastName', 'favouriteClass', 'isStudent'];
-  private userList: User[] | undefined = [];
+  userList: User[] | undefined = [];
   constructor(private studentService:StudentService) {
   }
   ngOnInit(){
