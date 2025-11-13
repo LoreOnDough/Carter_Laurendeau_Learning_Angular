@@ -1,4 +1,4 @@
-<h1>{{item?.firstName | uppercase}}</h1>
+<h1 [style.color]="item?.firstName | changeColour">{{item?.firstName | uppercase}}</h1>
 <h1>{{item?.lastName | lowercase}}</h1>
 <h1>{{item?.id}}</h1>
 <h1>{{item?.favouriteClass | titlecase}}</h1>

@@ -3,6 +3,7 @@ import {User} from '../models/user';
 import {userList} from '../data/mock-content';
 import {LowerCasePipe, TitleCasePipe, UpperCasePipe} from '@angular/common';
 import {StudentPipe} from '../student-pipe-pipe';
+import {ChangeColourPipe} from '../change-colour-pipe';
 
 @Component({
   selector: 'app-student-list-item',
@@ -10,7 +11,8 @@ import {StudentPipe} from '../student-pipe-pipe';
     UpperCasePipe,
     LowerCasePipe,
     TitleCasePipe,
-    StudentPipe
+    StudentPipe,
+    ChangeColourPipe
   ],
   templateUrl: './studend-list-item.html',
   styleUrl: './studend-list-item.css',
