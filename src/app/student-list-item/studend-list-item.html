@@ -1,7 +1,7 @@
-<h1>{{item?.firstName}}</h1>
-<h1>{{item?.lastName}}</h1>
+<h1>{{item?.firstName | uppercase}}</h1>
+<h1>{{item?.lastName | lowercase}}</h1>
 <h1>{{item?.id}}</h1>
-<h1>{{item?.favouriteClass}}</h1>
+<h1>{{item?.favouriteClass | titlecase}}</h1>
 <h1>{{item?.isStudent}}</h1>
 <button (click)="goBackward()" [disabled]="currentIndex === 0">Previous</button>
 <button (click)="goForward()" [disabled]="currentIndex === userList.length - 1">Next</button>
