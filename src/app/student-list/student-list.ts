@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../models/user';
 import {NgClass, NgForOf} from '@angular/common';
-import {StudentListItem} from '../student-list-item/studend-list-item';
+import {StudendListItem} from '../student-list-item/studend-list-item';
 import {StudentService} from '../student-service';
 
 @Component({
   selector: 'app-student-list',
-  imports: [NgForOf, StudentListItem, NgClass],
+  imports: [NgForOf, StudendListItem, NgClass],
   templateUrl: './student-list.html',
   styleUrl: './student-list.css'
 })

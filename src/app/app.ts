@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import {User} from './models/user';
 import {NgForOf, NgSwitch, NgSwitchCase} from '@angular/common';
 import {StudentList} from './student-list/student-list';
-import {StudentListItem} from './student-list-item/studend-list-item';
+import {StudendListItem} from './student-list-item/studend-list-item';
 import {StudentService} from './student-service';
 import {Observable} from 'rxjs';
 

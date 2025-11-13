@@ -2,13 +2,15 @@ import {Component, Input, input} from '@angular/core';
 import {User} from '../models/user';
 import {userList} from '../data/mock-content';
 import {LowerCasePipe, TitleCasePipe, UpperCasePipe} from '@angular/common';
+import {StudentPipe} from '../student-pipe-pipe';
 
 @Component({
   selector: 'app-student-list-item',
   imports: [
     UpperCasePipe,
     LowerCasePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    StudentPipe
   ],
   templateUrl: './studend-list-item.html',
   styleUrl: './studend-list-item.css',
@@ -16,7 +18,7 @@ import {LowerCasePipe, TitleCasePipe, UpperCasePipe} from '@angular/common';
 })
 
 
-export class StudentListItem {
+export class StudendListItem {
   private router: any;
   @Input() item?: User | undefined;
   currentIndex: number | undefined;
