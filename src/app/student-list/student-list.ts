@@ -3,10 +3,11 @@ import {User} from '../models/user';
 import {NgClass, NgForOf} from '@angular/common';
 import {StudendListItem} from '../student-list-item/studend-list-item';
 import {StudentService} from '../student-service';
+import {HoverHighlightDirective} from '../hover-highlight.directive';
 
 @Component({
   selector: 'app-student-list',
-  imports: [NgForOf, StudendListItem, NgClass],
+  imports: [NgForOf, StudendListItem, NgClass, HoverHighlightDirective],
   templateUrl: './student-list.html',
   styleUrl: './student-list.css'
 })

@@ -4,6 +4,8 @@ import {userList} from '../data/mock-content';
 import {LowerCasePipe, TitleCasePipe, UpperCasePipe} from '@angular/common';
 import {StudentPipe} from '../student-pipe-pipe';
 import {ChangeColourPipe} from '../change-colour-pipe';
+import {AutoFocusDirective} from '../auto-focus.directive';
+import {HoverHighlightDirective} from '../hover-highlight.directive';
 
 @Component({
   selector: 'app-student-list-item',
@@ -12,7 +14,9 @@ import {ChangeColourPipe} from '../change-colour-pipe';
     LowerCasePipe,
     TitleCasePipe,
     StudentPipe,
-    ChangeColourPipe
+    ChangeColourPipe,
+    AutoFocusDirective,
+    HoverHighlightDirective
   ],
   templateUrl: './studend-list-item.html',
   styleUrl: './studend-list-item.css',
@@ -51,4 +55,5 @@ export class StudendListItem {
     }
   }
   protected readonly userList = userList;
+  protected readonly HoverHighlightDirective = HoverHighlightDirective;
 }

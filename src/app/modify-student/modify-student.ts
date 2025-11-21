@@ -4,12 +4,14 @@ import {User} from '../models/user';
 import {ActivatedRoute, Router} from '@angular/router';
 import {StudentService} from '../student-service';
 import {NgIf} from '@angular/common';
+import {AutoFocusDirective} from '../auto-focus.directive';
 
 @Component({
   selector: 'app-modify-student',
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    AutoFocusDirective
   ],
   templateUrl: './modify-student.html',
   styleUrl: './modify-student.css'
