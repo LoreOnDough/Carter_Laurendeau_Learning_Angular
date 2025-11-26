@@ -10,6 +10,7 @@ import {MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatButton} from '@angular/material/button';
+import {MatTooltip} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-modify-student',
@@ -21,7 +22,8 @@ import {MatButton} from '@angular/material/button';
     MatLabel,
     MatInput,
     MatCheckbox,
-    MatButton
+    MatButton,
+    MatTooltip
   ],
   templateUrl: './modify-student.html',
   styleUrl: './modify-student.css'
