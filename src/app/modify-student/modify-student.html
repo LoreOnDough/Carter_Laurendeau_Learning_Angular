@@ -1,42 +1,42 @@
 <!-- modify-student.component.html -->
 <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
   <!-- ID Field -->
-  <div class="form-group">
-    <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" appAutoFocus/>
-  </div>
+  <mat-form-field class="form-group">
+    <mat-label>ID</mat-label>
+    <input matInput type="number" id="id" formControlName="id" appAutoFocus/>
+  </mat-form-field>
 
   <!-- First Name Field -->
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input type="text" id="firstName" formControlName="firstName" />
-  </div>
+  <mat-form-field class="form-group">
+    <mat-label for="firstName">First Name</mat-label>
+    <input matInput type="text" id="firstName" formControlName="firstName" />
+  </mat-form-field>
 
   <!-- Last Name Field -->
-  <div class="form-group">
-    <label for="lastName">Last Name</label>
-    <input type="text" id="lastName" formControlName="lastName" />
-  </div>
+  <mat-form-field class="form-group">
+    <mat-label for="lastName">Last Name</mat-label>
+    <input matInput type="text" id="lastName" formControlName="lastName" />
+  </mat-form-field>
 
   <!-- Department Field -->
-  <div class="form-group">
-    <label for="favouriteClass">Favourite Class</label>
-    <input type="text" id="favouriteClass" formControlName="favouriteClass" />
-  </div>
+  <mat-form-field class="form-group">
+    <mat-label for="favouriteClass">Favourite Class</mat-label>
+    <input matInput type="text" id="favouriteClass" formControlName="favouriteClass" />
+  </mat-form-field>
 
   <!-- Is Admin Checkbox -->
-  <div class="form-group">
-    <label for="isStudent">Is Student</label>
-    <input type="checkbox" id="isStudent" formControlName="isStudent" />
-  </div>
+  <mat-form-field class="form-group">
+    <mat-label for="isStudent">Is Student</mat-label>
+    <mat-checkbox id="isStudent" formControlName="isStudent" />
+  </mat-form-field>
 
   <!-- Submit Button (Add or Update) -->
-  <button type="submit">Submit</button>
+  <button matButton="outlined" type="submit">Submit</button>
 
   <!-- Delete Button (Always Displayed Now) -->
-  <button type="button" (click)="onDelete()">Delete</button>
+  <button matButton="elevated" type="button" (click)="onDelete()">Delete</button>
 
   <!-- Back Button -->
-  <button type="button" (click)="navigateToStudentList()">Back to List</button>
+  <button matButton="filled" type="button" (click)="navigateToStudentList()">Back to List</button>
 </form>
 <div *ngIf="error" class="error">{{ error }}</div>

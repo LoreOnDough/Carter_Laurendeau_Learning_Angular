@@ -1,4 +1,6 @@
-<div *ngFor="let user of userList; let i = index">
+<div matRipple [matRippleColor]="color" *ngFor="let user of userList; let i = index">
   <app-student-list-item [item] = "user" [ngClass]="{'even':i%2===0, 'odd':i%2===1}"></app-student-list-item>
-
+  <mat-divider></mat-divider>
+  <button matButton="filled" type="button" >Press me</button>
 </div>
+<button matButton="filled" type="button" (click)="goToModify()">Go to Modify</button>

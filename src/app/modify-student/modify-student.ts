@@ -5,13 +5,23 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {StudentService} from '../student-service';
 import {NgIf} from '@angular/common';
 import {AutoFocusDirective} from '../auto-focus.directive';
+import {MatFormField, MatLabel} from '@angular/material/form-field';
+//import {MatLabel} from '@angular/material/form-field-module';
+import {MatInput} from '@angular/material/input';
+import {MatCheckbox} from '@angular/material/checkbox';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-modify-student',
   imports: [
     ReactiveFormsModule,
     NgIf,
-    AutoFocusDirective
+    AutoFocusDirective,
+    MatFormField,
+    MatLabel,
+    MatInput,
+    MatCheckbox,
+    MatButton
   ],
   templateUrl: './modify-student.html',
   styleUrl: './modify-student.css'

@@ -1,8 +1,12 @@
-<h1 [style.color]="item?.firstName | changeColour">{{item?.firstName | uppercase}}</h1>
-<h1>{{item?.lastName | lowercase}}</h1>
-<h1>{{item?.id}}</h1>
-<h1>{{item?.favouriteClass | titlecase}}</h1>
-<h1>{{item?.isStudent | studentPipe}}</h1>
-<button (click)="goBackward()" [disabled]="currentIndex === 0" [appHoverHighlight]="'red'">Previous</button>
-<button (click)="goForward()" [disabled]="currentIndex === userList.length - 1" [appHoverHighlight]="'green'">Next</button>
-<button (click)="goBack()">Back to Student List</button>
+<mat-card>
+<mat-card-header [style.color]="item?.firstName | changeColour">{{item?.firstName | uppercase}}</mat-card-header>
+<mat-card-content>
+  <mat-card-subtitle>{{item?.lastName | lowercase}}</mat-card-subtitle>
+  <h1>{{item?.id}}</h1>
+  <h1>{{item?.favouriteClass | titlecase}}</h1>
+  <h1>{{item?.isStudent | studentPipe}}</h1>
+  <button (click)="goBackward()" [disabled]="currentIndex === 0" [appHoverHighlight]="'red'">Previous</button>
+  <button (click)="goForward()" [disabled]="currentIndex === userList.length - 1" [appHoverHighlight]="'green'">Next</button>
+  <button (click)="goBack()">Back to Student List</button>
+</mat-card-content>
+</mat-card>

@@ -6,6 +6,7 @@ import {StudentPipe} from '../student-pipe-pipe';
 import {ChangeColourPipe} from '../change-colour-pipe';
 import {AutoFocusDirective} from '../auto-focus.directive';
 import {HoverHighlightDirective} from '../hover-highlight.directive';
+import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle} from '@angular/material/card';
 
 @Component({
   selector: 'app-student-list-item',
@@ -16,7 +17,11 @@ import {HoverHighlightDirective} from '../hover-highlight.directive';
     StudentPipe,
     ChangeColourPipe,
     AutoFocusDirective,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatCardSubtitle
   ],
   templateUrl: './studend-list-item.html',
   styleUrl: './studend-list-item.css',
